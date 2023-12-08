@@ -1,3 +1,12 @@
-- name: Checkout
-  uses: actions/checkout@v4.1.1
-            
+name: Deploy Petclinic app on eks
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
